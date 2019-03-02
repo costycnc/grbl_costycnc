@@ -120,6 +120,8 @@ void st_go_idle()
     // Force stepper dwell to lock axes for a defined amount of time to ensure the axes come to a complete
     // stop and not drift from residual inertial forces at the end of the last movement.
     delay_ms(settings.stepper_idle_lock_time);
+	PORTD=0;
+	PORTC=0;
     if (bit_istrue(settings.flags,BITFLAG_INVERT_ST_ENABLE)) { 
       STEPPERS_DISABLE_PORT &= ~(1<<STEPPERS_DISABLE_BIT); 
     } else { 
