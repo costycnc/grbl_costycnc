@@ -2,6 +2,7 @@
 grbl modified for costycnc
 for compile with arduino ...put this folder in documents/arduino/libraries ... open arduino ide
 in file ... examples ... will find GRBL_costy >> GRBLtoArduino ... open it 
+
 or open Documents\Arduino\libraries\GRBL_costy\examples\GRBLtoArduino >>GRBLtoArduino.ino
 
 Board:Arduino nano
