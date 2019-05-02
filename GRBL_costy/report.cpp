@@ -150,7 +150,7 @@ void report_grbl_settings() {
   printPgmString(PSTR(" (y, step/mm)\r\n$4=")); printFloat(settings.default_seek_rate);
   printPgmString(PSTR(" (default feed, mm/min)\r\n$23=")); printInteger(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
   printPgmString(PSTR(" (direction asse x, bool)\r\n")); 
-  if(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)) print_uint8_base2(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
+  //if(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)) print_uint8_base2(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
  
 }
 
