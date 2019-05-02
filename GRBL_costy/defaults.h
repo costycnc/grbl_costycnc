@@ -29,13 +29,13 @@
 
 #ifdef DEFAULTS_GENERIC
   // Grbl generic default settings. Should work across different machines.
-  #define DEFAULT_X_STEPS_PER_MM 200.0
-  #define DEFAULT_Y_STEPS_PER_MM 200.0
+  #define DEFAULT_X_STEPS_PER_MM 340.0
+  #define DEFAULT_Y_STEPS_PER_MM 340.0
   #define DEFAULT_Z_STEPS_PER_MM 200.0
   #define DEFAULT_STEP_PULSE_MICROSECONDS 10
   #define DEFAULT_MM_PER_ARC_SEGMENT 0.1
-  #define DEFAULT_RAPID_FEEDRATE 100.0 // mm/min
-  #define DEFAULT_FEEDRATE 100.0
+  #define DEFAULT_RAPID_FEEDRATE 150.0 // mm/min
+  #define DEFAULT_FEEDRATE 150.0
   #define DEFAULT_ACCELERATION (10.0*60*60) // 10 mm/min^2
   #define DEFAULT_JUNCTION_DEVIATION 0.05 // mm
   #define DEFAULT_STEPPING_INVERT_MASK ((1<<Y_DIRECTION_BIT)|(1<<Z_DIRECTION_BIT))

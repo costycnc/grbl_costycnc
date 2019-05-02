@@ -85,7 +85,7 @@ void settings_reset(bool reset_all) {
   if (DEFAULT_REPORT_INCHES) { settings.flags |= BITFLAG_REPORT_INCHES; }
   if (DEFAULT_AUTO_START) { settings.flags |= BITFLAG_AUTO_START; }
   if (DEFAULT_INVERT_ST_ENABLE) { settings.flags |= BITFLAG_INVERT_ST_ENABLE; }
-  if (BITFLAG_INVERT_AXE_X) { settings.flags |= BITFLAG_INVERT_AXE_X; }
+  if (DEFAULT_INVERT_AXE_X) { settings.flags |= BITFLAG_INVERT_AXE_X; }
   if (DEFAULT_HARD_LIMIT_ENABLE) { settings.flags |= BITFLAG_HARD_LIMIT_ENABLE; }
   if (DEFAULT_HOMING_ENABLE) { settings.flags |= BITFLAG_HOMING_ENABLE; }
   settings.homing_dir_mask = DEFAULT_HOMING_DIR_MASK;
@@ -198,10 +198,10 @@ uint8_t settings_store_global_setting(int parameter, float value) {
     case 20: settings.homing_seek_rate = value; break;
     case 21: settings.homing_debounce_delay = round(value); break;
     case 22: settings.homing_pulloff = value; break;
-	  case 23: // Reset to ensure change. Immediate re-init may cause problems.
-      if (value) { settings.flags |= BITFLAG_INVERT_AXE_X; }
-      else { settings.flags &= ~BITFLAG_INVERT_AXE_X; }
-      break;
+	case 23: // Reset to ensure change. Immediate re-init may cause problems.
+    if (value) { settings.flags |= BITFLAG_INVERT_AXE_X; }
+    else { settings.flags &= ~BITFLAG_INVERT_AXE_X; }
+    break;
     default: 
       return(STATUS_INVALID_STATEMENT);
   }

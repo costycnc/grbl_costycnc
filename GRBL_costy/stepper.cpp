@@ -130,6 +130,44 @@ void st_go_idle()
   }
 }
 
+//rotate motor stanga sau dreapta
+
+void rotate_stanga()
+{
+ sys.position[X_AXIS]--;
+      //
+      //UDR0=65;
+      //DDRD=255;
+      costyx=costyx-1;
+     if (costyx < 1) costyx=8;
+     if (costyx==1)   PORTD=0B100000;
+     if (costyx==2)   PORTD=0B110000;
+     if (costyx==3)   PORTD=0B010000;
+     if (costyx==4)   PORTD=0B011000;
+     if (costyx==5)  PORTD=0B001000;
+     if (costyx==6)  PORTD=0B001100;
+     if (costyx==7)  PORTD=0B000100;
+     if (costyx==8) PORTD=0B100100;
+	 
+	 }
+	 
+	 void rotate_dreapta()
+	 {
+		sys.position[X_AXIS]++;
+     // UDR0=66;
+      //DDRD=255;
+      costyx=costyx+1;
+     if (costyx > 8) costyx=1;
+     if (costyx==1)   PORTD=0B100000;
+     if (costyx==2)   PORTD=0B110000;
+     if (costyx==3)   PORTD=0B010000;
+     if (costyx==4)   PORTD=0B011000;
+     if (costyx==5)  PORTD=0B001000;
+     if (costyx==6)  PORTD=0B001100;
+     if (costyx==7)  PORTD=0B000100;
+     if (costyx==8) PORTD=0B100100; 
+		  }
+
 // This function determines an acceleration velocity change every CYCLES_PER_ACCELERATION_TICK by
 // keeping track of the number of elapsed cycles during a de/ac-celeration. The code assumes that 
 // step_events occur significantly more often than the acceleration velocity iterations.
@@ -201,34 +239,23 @@ ISR(TIMER1_COMPA_vect)
     if (st.counter_x > 0) {
       out_bits |= (1<<X_STEP_BIT);
       st.counter_x -= st.event_count;
-      if (out_bits & (1<<X_DIRECTION_BIT)  ) { sys.position[X_AXIS]--;
-      //
-      //UDR0=65;
-      //DDRD=255;
-      costyx=costyx-1;
-     if (costyx < 1) costyx=8;
-     if (costyx==1)   PORTD=0B100000;
-     if (costyx==2)   PORTD=0B110000;
-     if (costyx==3)   PORTD=0B010000;
-     if (costyx==4)   PORTD=0B011000;
-     if (costyx==5)  PORTD=0B001000;
-     if (costyx==6)  PORTD=0B001100;
-     if (costyx==7)  PORTD=0B000100;
-     if (costyx==8) PORTD=0B100100;
+      if (out_bits & (1<<X_DIRECTION_BIT)) { 
+	           if (bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)){ 
+				         rotate_dreapta();
+			                               }
+                                      else { 
+									  rotate_stanga();
+									       }
+		  
       }
-      else { sys.position[X_AXIS]++;
-     // UDR0=66;
-      //DDRD=255;
-      costyx=costyx+1;
-     if (costyx > 8) costyx=1;
-     if (costyx==1)   PORTD=0B100000;
-     if (costyx==2)   PORTD=0B110000;
-     if (costyx==3)   PORTD=0B010000;
-     if (costyx==4)   PORTD=0B011000;
-     if (costyx==5)  PORTD=0B001000;
-     if (costyx==6)  PORTD=0B001100;
-     if (costyx==7)  PORTD=0B000100;
-     if (costyx==8) PORTD=0B100100;
+      else { 
+	  
+	                     if (bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)){ 
+				         rotate_stanga();
+			                               }
+                                      else { 
+									  rotate_dreapta();
+									       }
 
 }
 

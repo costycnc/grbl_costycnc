@@ -45,4 +45,10 @@ void st_cycle_reinitialize();
 // Initiates a feed hold of the running program
 void st_feed_hold();
 
+// rotate_dreapta
+void rotate_dreapta();
+
+// rotate_stanga
+void rotate_stanga();
+
 #endif
