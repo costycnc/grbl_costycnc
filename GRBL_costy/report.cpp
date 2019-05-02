@@ -169,6 +169,7 @@ void report_grbl_settings() {
   printPgmString(PSTR(" (homing feed, mm/min)\r\n$20=")); printFloat(settings.homing_seek_rate);
   printPgmString(PSTR(" (homing seek, mm/min)\r\n$21=")); printInteger(settings.homing_debounce_delay);
   printPgmString(PSTR(" (homing debounce, msec)\r\n$22=")); printFloat(settings.homing_pulloff);
+  printPgmString(PSTR(" (direction, bool)\r\n$23=")); printInteger(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
   printPgmString(PSTR(" (homing pull-off, mm)\r\n")); 
 }
 

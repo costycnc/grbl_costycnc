@@ -52,6 +52,7 @@
   #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-255)
   #define DEFAULT_DECIMAL_PLACES 3
   #define DEFAULT_N_ARC_CORRECTION 25
+  #define DEFAULT_INVERT_AXE_X 0 //false
 #endif
 
 #ifdef DEFAULTS_SHERLINE_5400
@@ -83,6 +84,7 @@
   #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-255)
   #define DEFAULT_DECIMAL_PLACES 3
   #define DEFAULT_N_ARC_CORRECTION 25
+  #define DEFAULT_INVERT_AXE_X 0 //false
 #endif
 
 #ifdef DEFAULTS_SHAPEOKO
@@ -117,6 +119,7 @@
   #define DEFAULT_STEPPER_IDLE_LOCK_TIME 255 // msec (0-255)
   #define DEFAULT_DECIMAL_PLACES 3
   #define DEFAULT_N_ARC_CORRECTION 25
+  #define DEFAULT_INVERT_AXE_X 0 //false
 #endif
 
 #ifdef DEFAULTS_ZEN_TOOLWORKS_7x7
@@ -149,6 +152,7 @@
   #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-255)
   #define DEFAULT_DECIMAL_PLACES 3
   #define DEFAULT_N_ARC_CORRECTION 25
+  #define DEFAULT_INVERT_AXE_X 0 //false
 #endif
 
 #endif
