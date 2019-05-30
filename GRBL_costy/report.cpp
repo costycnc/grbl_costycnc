@@ -145,10 +145,16 @@ void report_grbl_help() {
 // Grbl global settings print out.
 // NOTE: The numbering scheme here must correlate to storing in settings.c
 void report_grbl_settings() {
-  printPgmString(PSTR("$0=")); printFloat(settings.steps_per_mm[X_AXIS]);
-  printPgmString(PSTR(" (x, step/mm)\r\n$1=")); printFloat(settings.steps_per_mm[Y_AXIS]);
-  printPgmString(PSTR(" (y, step/mm)\r\n$4=")); printFloat(settings.default_seek_rate);
-  printPgmString(PSTR(" (default feed, mm/min)\r\n$23=")); printInteger(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
+  printPgmString(PSTR("$0="));
+  printFloat(settings.steps_per_mm[X_AXIS]);
+  printPgmString(PSTR(" (x, step/mm)\r\n$1=")); 
+  printFloat(settings.steps_per_mm[Y_AXIS]);
+  printPgmString(PSTR(" (y, step/mm)\r\n$4=")); 
+  printFloat(settings.default_feed_rate);
+  printPgmString(PSTR(" (default feed, mm/min)\r\n$5=")); 
+  printFloat(settings.default_seek_rate);
+  printPgmString(PSTR(" (default seek, mm/min)\r\n$23="));
+  printInteger(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
   printPgmString(PSTR(" (direction asse x, bool)\r\n")); 
   //if(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)) print_uint8_base2(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
  
