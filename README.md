@@ -18,7 +18,7 @@ Go to arduino libraries grbl and open config.h
 
 and modify (see diferencies):
 
-```C/C++
+```C
  /*
   config.h - compile time configuration
   Part of Grbl
@@ -102,7 +102,7 @@ and modify (see diferencies):
 ```
 open stepper.cpp and modify
 
-```C/C++
+```C
  /*
   stepper.c - stepper motor driver: executes motion plans using stepper motors
   Part of Grbl
