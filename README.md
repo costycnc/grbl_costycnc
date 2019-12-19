@@ -4,6 +4,8 @@ Below is for grbl 0.8c     (For grbl 1.1 see grbl_costycnc_1.1 )
 
 grbl modified for costycnc (also here  https://sites.google.com/site/costycnc/modify-grbl)
 
+![alt text](http://www.costycnc.it/arduino.jpg)
+
 for compile with arduino ...put this folder in documents/arduino/libraries ... open arduino ide
 in file ... examples ... will find GRBL_costy >> GRBLtoArduino ... open it 
 
