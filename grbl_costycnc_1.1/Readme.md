@@ -45,3 +45,13 @@ X_STEP_BIT is now in  cpu_map.h ( old in config.h)
 	  #define Z_DIRECTION_BIT   7  // Uno Digital Pin 7
 	  #define DIRECTION_MASK    ((1<<X_DIRECTION_BIT)|(1<<Y_DIRECTION_BIT)|(1<<Z_DIRECTION_BIT)) // All direction bits
 
+----
+
+	  
+	  C:\Users\costycnc\Downloads\grbl_costycnc-master\grbl_costycnc-master\grbl_costycnc_1.1\grbl_costycnc_1.1\cpu_map.h (2 hits)
+		Line 39: 	  #define X_STEP_BIT      2  // Uno Digital Pin 2
+		Line 42: 	  #define STEP_MASK       ((1<<X_STEP_BIT)|(1<<Y_STEP_BIT)|(1<<Z_STEP_BIT)) // All step bits
+	  C:\Users\costycnc\Downloads\grbl_costycnc-master\grbl_costycnc-master\grbl_costycnc_1.1\grbl_costycnc_1.1\settings.c (1 hit)
+		Line 319:   if ( axis_idx == X_AXIS ) { return((1<<X_STEP_BIT)); }
+	  C:\Users\costycnc\Downloads\grbl_costycnc-master\grbl_costycnc-master\grbl_costycnc_1.1\grbl_costycnc_1.1\stepper.c (1 hit)
+		Line 421:     st.step_outbits |= (1<<X_STEP_BIT);
