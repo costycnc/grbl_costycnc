@@ -18,7 +18,7 @@ Go to arduino libraries grbl and open config.h
 
 and modify (see diferencies):
 
-
+```c
  /*
   config.h - compile time configuration
   Part of Grbl
@@ -99,9 +99,10 @@ and modify (see diferencies):
 #define PINOUT_INT_vect  PCINT1_vect
 #define PINOUT_PCMSK     PCMSK1 // Pin change interrupt register
 #define PINOUT_MASK ((1<<PIN_RESET)|(1<<PIN_FEED_HOLD)|(1<<PIN_CYCLE_START))
-
+```
 open stepper.cpp and modify
 
+```
  /*
   stepper.c - stepper motor driver: executes motion plans using stepper motors
   Part of Grbl
@@ -241,5 +242,6 @@ if (sys.state == STATE_CYCLE) {
     if (st.step_events_completed < current_block->step_event_count) {
       if (sys.state == STATE_HOLD) {
 
+```
 
 you can see this forum https://forum.arduino.cc/index.php?topic=208099.0
