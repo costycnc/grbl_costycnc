@@ -18,4 +18,4 @@ I used arduino-1.8.10-windows
        6.Open Arduino File > Examples > Grbl > GrblUpload ( appear only if library is installed successfully)
        7.Compile and upload
 
-
+X_STEP_BIT is now in  cpu_map.h ( old in config.h)
