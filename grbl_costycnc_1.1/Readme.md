@@ -10,9 +10,9 @@ I used arduino-1.8.10-windows
 
        1. download https://github.com/costycnc/grbl_costycnc (for original https://github.com/gnea/grbl)
        2. extract zip and open folder 
-       3. Arduino Sketch > Include Library > Add .zip library  ... select grbl folder from inside of grbl-1.1h.20190825 folder
+       3. Arduino Sketch > Include Library > Add .zip library  ... select grbl folder from inside of grbl_costycnc_1.1 folder
        ( for grbl original select grbl folder from inside of grbl-1.1h.20190825 folder)
-       4. Now library is installed in Mydocuments/Arduino/librariesyou can see grbl folder that contain all files
+       4. Now library is installed in Mydocuments/Arduino/libraries you can see grbl folder that contain all files
        5.In Arduino Tools >  i select Board "Arduino nano" and Processor  Atmega328P(old bootloader) and Port
        ( The difference of old and new bootloader is only bauds 57600 vs 115200)
        6.Open Arduino File > Examples > Grbl > GrblUpload ( appear only if library is installed successfully)
