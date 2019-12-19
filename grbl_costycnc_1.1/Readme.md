@@ -24,6 +24,6 @@ First time return error:22  Need to send $N1=F150 https://github.com/gnea/grbl/i
 ![alt text](http://www.costycnc.it/arduino.jpg)
 
 $100,101,102 x,y,z step/mm
-$110,111,112 feedrate
+$110,111,112 x,y,z max rate mm/min
 
 X_STEP_BIT is now in  cpu_map.h ( old in config.h)
