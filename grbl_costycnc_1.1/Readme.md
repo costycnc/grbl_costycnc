@@ -55,3 +55,12 @@ X_STEP_BIT is now in  cpu_map.h ( old in config.h)
 		Line 319:   if ( axis_idx == X_AXIS ) { return((1<<X_STEP_BIT)); }
 	  C:\Users\costycnc\Downloads\grbl_costycnc-master\grbl_costycnc-master\grbl_costycnc_1.1\grbl_costycnc_1.1\stepper.c (1 hit)
 		Line 421:     st.step_outbits |= (1<<X_STEP_BIT);
+----
+	  ISR(TIMER0_COMPA_vect)
+	  {
+		STEP_PORT = st.step_bits; // Begin step pulse.
+		#ifdef ENABLE_DUAL_AXIS
+		  STEP_PORT_DUAL = st.step_bits_dual;
+		#endif
+	  }
+	#endif
