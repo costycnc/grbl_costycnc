@@ -1,6 +1,6 @@
 # grbl_costycnc
 
-Below is for grbl 0.8c For grbl 1.1 see grbl_costycnc_1.1 
+Below is for grbl 0.8c     (For grbl 1.1 see grbl_costycnc_1.1 )
 
 grbl modified for costycnc (also here  https://sites.google.com/site/costycnc/modify-grbl)
 
