@@ -1,5 +1,5 @@
 # grbl_costycnc
-grbl modified for costycnc
+grbl modified for costycnc https://sites.google.com/site/costycnc/modify-grbl
 for compile with arduino ...put this folder in documents/arduino/libraries ... open arduino ide
 in file ... examples ... will find GRBL_costy >> GRBLtoArduino ... open it 
 
