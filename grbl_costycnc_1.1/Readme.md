@@ -17,5 +17,6 @@ I used arduino-1.8.10-windows
        ( The difference of old and new bootloader is only bauds 57600 vs 115200)
        6.Open Arduino File > Examples > Grbl > GrblUpload ( appear only if library is installed successfully)
        7.Compile and upload
+![alt text](https://github.com/gnea/gnea-Media/raw/master/Grbl%20Help/Grbl_Pin_Diagram_v0.9+.png)
 
 X_STEP_BIT is now in  cpu_map.h ( old in config.h)
