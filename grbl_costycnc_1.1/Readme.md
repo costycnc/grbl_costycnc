@@ -80,3 +80,15 @@ Tutorial:
 	      
 	      PORTD = PORTD & B00000011;  // clear out bits 2 - 7, leave pins PD0 and PD1 untouched (xx & 11 == xx)
 	      
+Begin modify 20.12.2019	      
+
+	  #define STEP_PORT       PORTD
+	    st.step_bits = (STEP_PORT & ~STEP_MASK) | st.step_outbits; // Store out_bits to prevent overwriting.
+	    STEP_PORT = (STEP_PORT & ~STEP_MASK) | st.step_outbits;
+	    STEP_PORT = (STEP_PORT & ~STEP_MASK) | st.step_outbits;
+	  //STEP_PORT = (STEP_PORT & ~STEP_MASK) | (step_port_invert_mask & STEP_MASK);
+	  //STEP_PORT = (STEP_PORT & ~STEP_MASK) | (step_port_invert_mask & STEP_MASK);
+	    //STEP_PORT = st.step_bits; // Begin step pulse.
+	  //STEP_PORT = (STEP_PORT & ~STEP_MASK) | step_port_invert_mask;
+	  //STEP_PORT = (STEP_PORT & ~STEP_MASK) | step_port_invert_mask;
+	      
