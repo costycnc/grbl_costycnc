@@ -64,3 +64,8 @@ X_STEP_BIT is now in  cpu_map.h ( old in config.h)
 		#endif
 	  }
 	#endif
+	
+line 427 stepper.c
+
+              if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { sys_position[X_AXIS]--; }
+              else { sys_position[X_AXIS]++; }
