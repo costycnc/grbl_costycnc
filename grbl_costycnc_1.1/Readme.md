@@ -132,8 +132,8 @@ line 427 stepper.c
 	      
 	      mai jos cu subrutina ...
 	      
-	      if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { rotate_dreapta; }
-              else { rotate_stanga; }
+	      if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { rotate_stanga; }
+              else { rotate_dreapta; }
 	      
 	      
 
