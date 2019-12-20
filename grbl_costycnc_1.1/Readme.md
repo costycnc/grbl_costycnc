@@ -71,11 +71,12 @@ line 427 stepper.c
               else { sys_position[X_AXIS]++; }
 	      
 Tutorial:
-              #define X_STEP_BIT      2 
-	         int buttonState = B0;
-              buttonState |= (1<<X_STEP_BIT);
-              Serial.println(buttonState,BIN);
-	      Result > 100     (4)
+
+		 #define X_STEP_BIT      2 
+		 int buttonState = B0;
+		 buttonState |= (1<<X_STEP_BIT);
+		 Serial.println(buttonState,BIN);
+		 Result > 100     (4)
 	      
 	      PORTD = PORTD & B00000011;  // clear out bits 2 - 7, leave pins PD0 and PD1 untouched (xx & 11 == xx)
 	      
