@@ -21,6 +21,7 @@ I used arduino-1.8.10-windows
 First time return error:22  Need to send $N1=F150 https://github.com/gnea/grbl/issues/255       
        
 ![alt text](https://github.com/gnea/gnea-Media/raw/master/Grbl%20Help/Grbl_Pin_Diagram_v0.9+.png)
+![alt text](https://components101.com/sites/default/files/component_pin/Arduino-Uno-Pin-Diagram.png)
 ![alt text](http://www.costycnc.it/arduino.jpg)
 
 $100,101,102 x,y,z step/mm
