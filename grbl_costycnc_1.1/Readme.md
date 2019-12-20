@@ -147,6 +147,7 @@ main.c
           DDRC=0B00001111;
 	  
 stepper.c	  
+
 		  void st_go_idle() 
 		{
 		.
