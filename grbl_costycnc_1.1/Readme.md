@@ -41,7 +41,13 @@ Tutorial:
 	      
 Begin modify 20.12.2019	     
 
-line 427 stepper.c
+stepper.c
+
+		#include "grbl.h"
+		int costyx=1;
+		int costyy=1;
+
+--
 
              //rotate motor stanga sau dreapta
 
@@ -80,7 +86,7 @@ line 427 stepper.c
      if (costyx==7)  PORTD=0B000100;
      if (costyx==8) PORTD=0B100100; 
 		  }
-       .....
+----
        .
        .
        .
