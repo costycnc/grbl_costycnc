@@ -129,3 +129,14 @@ main.c
     {
           DDRD=0B111100;
           DDRC=0B00001111;
+	  
+stepper.c	  
+	  void st_go_idle() 
+        {
+	.
+	.
+	.
+        delay_ms(settings.stepper_idle_lock_time);
+	PORTD=0;
+	PORTC=0;	  
+	  
