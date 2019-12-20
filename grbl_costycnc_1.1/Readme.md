@@ -79,6 +79,7 @@ Tutorial:
 		 Result > 100     (4)
 	      
 	      PORTD = PORTD & B00000011;  // clear out bits 2 - 7, leave pins PD0 and PD1 untouched (xx & 11 == xx)
+	      DDRD = DDRD | B11111100;    // set out bits 2 - 7, leave pins PD0 and PD1 untouched (xx | 00 == xx)
 	      
 Begin modify 20.12.2019	      
 
