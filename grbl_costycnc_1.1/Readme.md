@@ -81,12 +81,14 @@ Begin modify 20.12.2019
 
 line 427 stepper.c
 
-              if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { sys_position[X_AXIS]--; }
-              else { sys_position[X_AXIS]++; }
-	      
-sys_position[X_AXIS]--;
+             //rotate motor stanga sau dreapta
 
-
+void rotate_stanga()
+{
+ sys.position[X_AXIS]--;
+      //
+      //UDR0=65;
+      //DDRD=255;
       costyx=costyx-1;
      if (costyx < 1) costyx=8;
      if (costyx==1)   PORTD=0B100000;
@@ -97,9 +99,14 @@ sys_position[X_AXIS]--;
      if (costyx==6)  PORTD=0B001100;
      if (costyx==7)  PORTD=0B000100;
      if (costyx==8) PORTD=0B100100;
-     
-sys_position[X_AXIS]++;
-
+	 
+	 }
+	 
+	 void rotate_dreapta()
+	 {
+		sys.position[X_AXIS]++;
+     // UDR0=66;
+      //DDRD=255;
       costyx=costyx+1;
      if (costyx > 8) costyx=1;
      if (costyx==1)   PORTD=0B100000;
@@ -109,7 +116,28 @@ sys_position[X_AXIS]++;
      if (costyx==5)  PORTD=0B001000;
      if (costyx==6)  PORTD=0B001100;
      if (costyx==7)  PORTD=0B000100;
-     if (costyx==8) PORTD=0B100100;
+     if (costyx==8) PORTD=0B100100; 
+		  }
+       .....
+       .
+       .
+       .
+       .
+       .
+       .
+       
+
+              if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { sys_position[X_AXIS]--; }
+              else { sys_position[X_AXIS]++; }
+	      
+	      mai jos cu subrutina ...
+	      
+	      if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { rotate_dreapta; }
+              else { rotate_stanga; }
+	      
+	      
+
+     
 
 main.c
 
