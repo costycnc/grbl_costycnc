@@ -122,3 +122,10 @@ sys_position[X_AXIS]++;
      if (costyx==6)  PORTD=0B001100;
      if (costyx==7)  PORTD=0B000100;
      if (costyx==8) PORTD=0B100100;
+
+main.c
+
+     int main(void)
+    {
+          DDRD=0B111100;
+          DDRC=0B00001111;
