@@ -65,10 +65,6 @@ X_STEP_BIT is now in  cpu_map.h ( old in config.h)
 	  }
 	#endif
 	
-line 427 stepper.c
-
-              if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { sys_position[X_AXIS]--; }
-              else { sys_position[X_AXIS]++; }
 	      
 Tutorial:
 
@@ -81,20 +77,12 @@ Tutorial:
 	      PORTD = PORTD & B00000011;  // clear out bits 2 - 7, leave pins PD0 and PD1 untouched (xx & 11 == xx)
 	      DDRD = DDRD | B11111100;    // set out bits 2 - 7, leave pins PD0 and PD1 untouched (xx | 00 == xx)
 	      
-Begin modify 20.12.2019	      
+Begin modify 20.12.2019	     
 
-	Search "STEP_PORT" (9 hits in 2 files)
-	  C:\Users\costycnc\Documents\Arduino\libraries\grbl_costycnc_1.1\cpu_map.h (1 hit)
-		Line 38:   #define STEP_PORT       PORTD
-	  C:\Users\costycnc\Documents\Arduino\libraries\grbl_costycnc_1.1\stepper.c (8 hits)
-		Line 331:     //st.step_bits = (STEP_PORT & ~STEP_MASK) | st.step_outbits; // Store out_bits to prevent overwriting.
-		Line 336:     //STEP_PORT = (STEP_PORT & ~STEP_MASK) | st.step_outbits;
-		Line 336:     //STEP_PORT = (STEP_PORT & ~STEP_MASK) | st.step_outbits;
-		Line 492:   //STEP_PORT = (STEP_PORT & ~STEP_MASK) | (step_port_invert_mask & STEP_MASK);
-		Line 492:   //STEP_PORT = (STEP_PORT & ~STEP_MASK) | (step_port_invert_mask & STEP_MASK);
-		Line 506:     //STEP_PORT = st.step_bits; // Begin step pulse.
-		Line 554:   //STEP_PORT = (STEP_PORT & ~STEP_MASK) | step_port_invert_mask;
-		Line 554:   //STEP_PORT = (STEP_PORT & ~STEP_MASK) | step_port_invert_mask;
+line 427 stepper.c
+
+              if (st.exec_block->direction_bits & (1<<X_DIRECTION_BIT)) { sys_position[X_AXIS]--; }
+              else { sys_position[X_AXIS]++; }
 	      
 sys_position[X_AXIS]--;
 
