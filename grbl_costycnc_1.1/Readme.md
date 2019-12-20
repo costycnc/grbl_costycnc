@@ -83,24 +83,24 @@ line 427 stepper.c
 
              //rotate motor stanga sau dreapta
 
-void rotate_stanga()
-{
- sys.position[X_AXIS]--;
-      //
-      //UDR0=65;
-      //DDRD=255;
-      costyx=costyx-1;
-     if (costyx < 1) costyx=8;
-     if (costyx==1)   PORTD=0B100000;
-     if (costyx==2)   PORTD=0B110000;
-     if (costyx==3)   PORTD=0B010000;
-     if (costyx==4)   PORTD=0B011000;
-     if (costyx==5)  PORTD=0B001000;
-     if (costyx==6)  PORTD=0B001100;
-     if (costyx==7)  PORTD=0B000100;
-     if (costyx==8) PORTD=0B100100;
-	 
-	 }
+		void rotate_stanga()
+		{
+		 sys.position[X_AXIS]--;
+		      //
+		      //UDR0=65;
+		      //DDRD=255;
+		      costyx=costyx-1;
+		     if (costyx < 1) costyx=8;
+		     if (costyx==1)   PORTD=0B100000;
+		     if (costyx==2)   PORTD=0B110000;
+		     if (costyx==3)   PORTD=0B010000;
+		     if (costyx==4)   PORTD=0B011000;
+		     if (costyx==5)  PORTD=0B001000;
+		     if (costyx==6)  PORTD=0B001100;
+		     if (costyx==7)  PORTD=0B000100;
+		     if (costyx==8) PORTD=0B100100;
+
+			 }
 	 
 	 void rotate_dreapta()
 	 {
