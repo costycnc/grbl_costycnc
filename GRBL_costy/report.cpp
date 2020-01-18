@@ -122,7 +122,7 @@ void report_feedback_message(uint8_t message_code)
 // Welcome message
 void report_init_message()
 {
-  printPgmString(PSTR("\r\nGrbl " GRBL_VERSION " ['$' for help]\r\n"));
+  printPgmString(PSTR("\r\nGrbl " GRBL_VERSION " costycnc 1.0 ['$' for help]\r\n"));
 }
 
 // Grbl help message
@@ -147,15 +147,27 @@ void report_grbl_help() {
 void report_grbl_settings() {
   printPgmString(PSTR("$0="));
   printFloat(settings.steps_per_mm[X_AXIS]);
+  
   printPgmString(PSTR(" (x, step/mm)\r\n$1=")); 
   printFloat(settings.steps_per_mm[Y_AXIS]);
+  
   printPgmString(PSTR(" (y, step/mm)\r\n$4=")); 
   printFloat(settings.default_feed_rate);
+  
   printPgmString(PSTR(" (default feed, mm/min)\r\n$5=")); 
   printFloat(settings.default_seek_rate);
-  printPgmString(PSTR(" (default seek, mm/min)\r\n$23="));
-  printInteger(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
-  printPgmString(PSTR(" (direction asse x, bool)\r\n")); 
+  
+  printPgmString(PSTR(" (default seek, mm/min)\r\n$8="));
+  printFloat(settings.acceleration/(60*60));
+  
+  printPgmString(PSTR(" (default acceleration, mm/min)\r\n"));
+  
+  
+  
+  
+  //$23="));
+  //printInteger(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
+  //printPgmString(PSTR(" (direction asse x, bool)\r\n")); 
   //if(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)) print_uint8_base2(bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X));
  
 }

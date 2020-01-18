@@ -241,20 +241,20 @@ ISR(TIMER1_COMPA_vect)
       st.counter_x -= st.event_count;
       if (out_bits & (1<<X_DIRECTION_BIT)) { 
 	           if (bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)){ 
-				         rotate_dreapta();
+				         rotate_stanga();
 			                               }
                                       else { 
-									  rotate_stanga();
+									  rotate_dreapta();
 									       }
 		  
       }
       else { 
 	  
 	                     if (bit_istrue(settings.flags,BITFLAG_INVERT_AXE_X)){ 
-				         rotate_stanga();
+				         rotate_dreapta();
 			                               }
                                       else { 
-									  rotate_dreapta();
+									  rotate_stanga();
 									       }
 
 }
